@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-neutral-950 text-neutral-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-amber-400/30 text-amber-200;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-neutral-700;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-600;
+  }
+}
