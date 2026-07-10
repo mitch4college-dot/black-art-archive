@@ -37,7 +37,7 @@ export const artworks: Artwork[] = [
       nationality: "Edo (Benin Kingdom, Nigeria)",
     },
     year: "c. 1520",
-    medium: "Bronze, lost-wax casting",
+    medium: "Brass, lost-wax casting",
     dimensions: "41 cm height",
     description:
       "This naturalistic bronze head portrays Queen Idia, mother of Oba Esigie (r. 1504–1550), who was a powerful political and spiritual figure in the Benin Kingdom. The ivory scarification marks on the forehead and the elaborate coral bead headdress denote her royal status. Queen Idia was a warrior queen who raised an army and fought alongside her son.",
@@ -258,7 +258,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: "kongo-nkisi",
-    title: "Nkisi N'Kondi (Power Figure)",
+    title: "Nkisi Nkondi (Power Figure)",
     artist: {
       name: "Unknown Kongo Artist",
       bio: "Kongo ritual specialists (nganga) who carved and empowered nkisi figures. These objects served as containers for spiritual forces used in healing, oath-taking, and dispute resolution in the Kongo kingdom (present-day Angola, DRC, and Republic of Congo).",
@@ -872,7 +872,7 @@ export const artworks: Artwork[] = [
       city: "Washington, D.C.",
       country: "United States",
     },
-    image: "/images/kehinde-wiley-obama.png",
+    image: "/images/kehinde-wiley-obama.jpg",
     tags: ["contemporary", "diaspora", "painting", "portrait", "2010s"],
     featured: true,
   },
@@ -894,8 +894,8 @@ export const artworks: Artwork[] = [
     history:
       "Thomas developed her signature style after retiring from a 35-year career as a public school art teacher, at age 68. Inspired by the Natural world, the space race, and the Washington Color School, she created works of extraordinary optimism and energy. 'Resurrection' was included in her historic 1972 solo exhibition at the Whitney Museum. In 2015, her painting 'Resurrection' hung in the Obama White House.",
     location: {
-      museum: "The Metropolitan Museum of Art",
-      city: "New York",
+      museum: "The White House (Old Family Dining Room)",
+      city: "Washington, D.C.",
       country: "United States",
     },
     image: "/images/alma-thomas-resurrection.jpg",
@@ -1306,7 +1306,7 @@ export const artworks: Artwork[] = [
       city: "New York",
       country: "United States",
     },
-    image: "/images/charles-alston-sculpture.png",
+    image: "/images/charles-alston-sculpture.jpg",
     tags: ["contemporary", "diaspora", "sculpture", "bronze", "harlem-renaissance", "1950s"],
     featured: false,
   },
