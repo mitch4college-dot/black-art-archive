@@ -61,26 +61,36 @@ function ArtworkDetail() {
       {/* Hero Image Area */}
       <section className="mx-auto max-w-7xl px-6 pb-12">
         <div className="overflow-hidden rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-800 via-neutral-900 to-neutral-950">
-          <div className="flex aspect-[16/9] items-center justify-center lg:aspect-[21/9]">
-            <div className="text-center">
-              <svg
-                className="mx-auto h-20 w-20 text-neutral-700"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                />
-              </svg>
-              <p className="mt-4 font-body text-base text-neutral-600">
-                Image coming soon — archival photograph pending
-              </p>
+          {artwork.image ? (
+            <div className="aspect-[16/9] lg:aspect-[21/9]">
+              <img
+                src={artwork.image}
+                alt={artwork.title}
+                className="h-full w-full object-cover"
+              />
             </div>
-          </div>
+          ) : (
+            <div className="flex aspect-[16/9] items-center justify-center lg:aspect-[21/9]">
+              <div className="text-center">
+                <svg
+                  className="mx-auto h-20 w-20 text-neutral-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                  />
+                </svg>
+                <p className="mt-4 font-body text-base text-neutral-600">
+                  Image coming soon — archival photograph pending
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -314,21 +324,31 @@ function ArtworkDetail() {
                   params={{ id: related.id }}
                   className="group overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/40 transition hover:border-amber-400/30"
                 >
-                  <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-900">
-                    <svg
-                      className="h-10 w-10 text-neutral-700"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
+                  {related.image ? (
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={related.image}
+                        alt={related.title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       />
-                    </svg>
-                  </div>
+                    </div>
+                  ) : (
+                    <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-900">
+                      <svg
+                        className="h-10 w-10 text-neutral-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                        />
+                      </svg>
+                    </div>
+                  )}
                   <div className="p-4">
                     <p className="font-heading text-sm font-semibold leading-tight text-white group-hover:text-amber-400 line-clamp-2">
                       {related.title}

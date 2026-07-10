@@ -294,25 +294,35 @@ function Catalog() {
                   params={{ id: artwork.id }}
                   className="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900/40 transition hover:border-amber-400/30 hover:shadow-lg hover:shadow-amber-400/5"
                 >
-                  {/* Image placeholder */}
-                  <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-900">
-                    <div className="text-center">
-                      <svg
-                        className="mx-auto h-10 w-10 text-neutral-700"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                        />
-                      </svg>
-                      <p className="mt-1 text-xs text-neutral-600">Image coming</p>
+                  {/* Image */}
+                  {artwork.image ? (
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={artwork.image}
+                        alt={artwork.title}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      />
                     </div>
-                  </div>
+                  ) : (
+                    <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-900">
+                      <div className="text-center">
+                        <svg
+                          className="mx-auto h-10 w-10 text-neutral-700"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1.5}
+                          />
+                        </svg>
+                        <p className="mt-1 text-xs text-neutral-600">Image coming</p>
+                      </div>
+                    </div>
+                  )}
                   <div className="p-4">
                     <p className="font-heading text-base font-semibold leading-tight text-white group-hover:text-amber-400 line-clamp-2">
                       {artwork.title}
